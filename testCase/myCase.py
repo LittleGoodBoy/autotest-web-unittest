@@ -3,6 +3,7 @@ from page.testPage import TestPage
 
 
 class MyCase(unittest.TestCase):
+
     '''
         类方法,在所有测试用例执行之前执行,只执行一次
     '''
@@ -15,8 +16,8 @@ class MyCase(unittest.TestCase):
     '''
         测试用例1
     '''
-    def test_a_study(self):
 
+    def test_a_study(self):
         self.testPage.addSearch("selenium")
         self.testPage.clickSearch()
         # 获取当前页面的title
@@ -29,10 +30,11 @@ class MyCase(unittest.TestCase):
     '''
         类方法,在所有测试用例执行之后执行,只执行一次
     '''
+
     @classmethod
     def tearDownClass(cls):
-        cls.testPage.quit() # 关闭驱动
+        cls.testPage.quit()  # 关闭驱动
 
 
 if __name__ == '__main__':
-    unittest.main() # 运行case
+    unittest.main()  # 运行case
